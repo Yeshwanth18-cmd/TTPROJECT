@@ -1,22 +1,15 @@
 import { Navigate } from "react-router-dom";
-import { getToken } from "../services/auth";
+import { getCurrentUser } from "../services/auth";
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
 }
 
-function ProtectedRoute({
-  children,
-}: ProtectedRouteProps) {
-  const token = getToken();
+function ProtectedRoute({ children }: ProtectedRouteProps) {
+  const user = getCurrentUser();
 
-  if (!token) {
-    return (
-      <Navigate
-        to="/login"
-        replace
-      />
-    );
+  if (!user) {
+    return <Navigate to="/login" replace />;
   }
 
   return <>{children}</>;

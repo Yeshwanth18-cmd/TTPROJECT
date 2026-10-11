@@ -10,4 +10,9 @@ export interface Project {
   status: ProjectStatus;
   createdAt: string;
   clientId: number;
+  clientName?: string;
+  skills?: string[];
+  duration?: string;
+  deliverables?: string[];
+  proposalsCount?: number;
 }

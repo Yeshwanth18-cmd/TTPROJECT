@@ -7,6 +7,9 @@ export interface Proposal {
   freelancerId: number;
   freelancerName: string;
   freelancerEmail: string;
+  freelancerTitle?: string;
+  freelancerRating?: number;
+  freelancerSkills?: string[];
   amount: number;
   deliveryDays: number;
   coverLetter: string;
@@ -23,4 +26,6 @@ export interface DashboardStats {
   pendingProposals: number;
   acceptedProposals: number;
   totalUsers: number;
+  totalSpent?: number;
+  activeTalent?: number;
 }
